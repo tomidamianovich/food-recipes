@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header'
+import CardsContainer from './components/CardsContainer/CardsContainer'
+import { withRecipesTheme } from './styles/Theme';
 
 function App() {
+  const data = [
+    {
+      id: 1,
+      title: 'Rice',
+      ingredients: ['Rice', 'salt'],
+      description: 'Rice common recipe',
+      steps: []
+    },
+    {
+      id: 2,
+      title: 'Meat',
+      ingredients: ['Roast Beff', 'salt', 'onion'],
+      description: 'Roast Beff common recipe',
+      steps: []
+    },
+    {
+      id: 3,
+      title: 'French Fries',
+      ingredients: ['Potato', 'salt'],
+      description: 'French Fries common recipe',
+      steps: []
+    },
+    {
+      id: 4,
+      title: 'Salad',
+      ingredients: ['Tomato', 'onion'],
+      description: 'Salad common recipe',
+      steps: []
+    }
+  ];
+  debugger
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header
+        title="Recipes"
+      />
+      <CardsContainer 
+        cards={data}
+      />
     </div>
   );
 }
 
-export default App;
+export default withRecipesTheme(App);
