@@ -15,10 +15,8 @@ const CardsContainer: React.FC<Props> = ({
 	cards
 }) => {
 	return (
-		<div className={classes.wrapper}>
-			{cards.map((card) => (
-				<Card cardInfo={card} />
-      ))}
+		<div className={classes.wrapper} data-testid="cards-container">
+			{cards.map((card) => <Card cardInfo={card} key={card.id} testid={`card-n${card.id}`}/>)}
 		</div>
 	);
 }

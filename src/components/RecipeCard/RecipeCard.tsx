@@ -12,14 +12,16 @@ import Button from '@material-ui/core/Button';
 
 type Props = {
 	cardInfo: Recipe;
+	testid: string;
 } & WithStyles<typeof styles>;
 
 const RecipeCard: React.FC<Props> = ({
 	classes,
+	testid,
 	cardInfo
 }) => {
 	return (
-		<Card className={classes.cardWrapper}>
+		<Card className={classes.cardWrapper} data-testid={testid}>
 			<CardContent>
 				<Typography className={classes.title} color="textSecondary" gutterBottom>
 					{cardInfo.title}
@@ -29,7 +31,7 @@ const RecipeCard: React.FC<Props> = ({
         </Typography>
 			</CardContent>
 			<CardActions className={classes.buttonWrapper}>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Show Recipe</Button>
       </CardActions>
 		</Card>
 	);
