@@ -2,8 +2,8 @@ export interface IRecipe {
   id: number
   title: string
   ingredients: string[],
-  description: String,
-  steps: String[]
+  description: string,
+  steps: string[]
 }
 
 export type RecipeState = {

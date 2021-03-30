@@ -9,7 +9,7 @@ import {
 let lastId = 0;
 
 
-const initialState:RecipeState = {
+export const initialState:RecipeState = {
   recipes: [{
     id: 1,
     title: 'Rice',
