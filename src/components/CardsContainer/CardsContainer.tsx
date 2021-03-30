@@ -4,10 +4,10 @@ import {
 } from '@material-ui/core/styles';
 import Card from '../RecipeCard/RecipeCard'
 import styles from '../CardsContainer/CardsContainer.styles'
-import { Recipe } from '../../utils/Interfaces'
+import { IRecipe } from "../../type"
 
 type Props = {
-	cards: Array<Recipe>;
+	cards: IRecipe[];
 } & WithStyles<typeof styles>;
 
 const CardsContainer: React.FC<Props> = ({

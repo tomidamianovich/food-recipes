@@ -7,11 +7,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import styles from '../RecipeCard/RecipeCard.styles'
-import { Recipe } from '../../utils/Interfaces'
+import { IRecipe } from "../../type"
 import Button from '@material-ui/core/Button';
 
 type Props = {
-	cardInfo: Recipe;
+	cardInfo: IRecipe;
 	testid: string;
 } & WithStyles<typeof styles>;
 
