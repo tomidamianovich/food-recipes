@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 function App() {
   const recipes:IRecipe[]  = useSelector((state:RecipeState) => state.recipes)
   const getIndexForNewRecipes = () => {
+    if (!recipes.length) return 0
     const lastRecipeArrayIndex = recipes.reduce((maxIndex, x, i, arr) => x.id > arr[maxIndex].id ? i : maxIndex, 0);
     return recipes[lastRecipeArrayIndex].id >= 0 ? recipes[lastRecipeArrayIndex].id + 1 : 0
   }

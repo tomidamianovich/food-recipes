@@ -46,7 +46,6 @@ const AddRecipeForm: React.FC<Props> = ({
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               setSubmitting(false);
-              debugger
               dispatch(
                 addRecipe({
                   id: recipeIndex,

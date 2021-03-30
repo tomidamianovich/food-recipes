@@ -31,7 +31,16 @@ const styles = (theme: Theme) =>
     buttonWrapper: {
       margin: 'auto',
       display: 'block'
-    }
+    },
+    closeButton:{
+      marginRight: '0',
+      marginLeft: 'auto',
+      display: 'block',
+      padding: '0',
+      span: {
+        padding: '0'
+      }
+    } 
   });
 
 export default styles
