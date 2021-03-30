@@ -13,10 +13,10 @@ const styles = (theme: Theme) =>
 			fontSize: theme.typography.h6.fontSize,
 			padding: '1rem',
       margin: '1rem',
-      ['@media (max-width:511px)']: {
+      ['@media (max-width:511px)']: { // eslint-disable-line
         justifyContent: 'center'
       },
-      ['@media (min-width:512px)']: {
+      ['@media (min-width:512px)']: { // eslint-disable-line
         justifyContent: 'flex-start'
       }
     }

@@ -2,12 +2,8 @@ import * as actionTypes from "./actionTypes"
 import { 
   RecipeState,
   IRecipe,
-  RecipeAction,
-  DispatchType,
+  RecipeAction
   } from "../type"
-
-let lastId = 0;
-
 
 export const initialState:RecipeState = {
   recipes: [{
@@ -48,7 +44,7 @@ const reducer = (
   switch (action.type) {
     case actionTypes.ADD_RECIPE:
       const newRecipe: IRecipe = {
-        id: ++lastId,
+        id: action.payload.id,
         title: action.payload.title,
         description: action.payload.description,
         ingredients: action.payload.ingredients,

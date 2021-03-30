@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -7,7 +6,7 @@ import { Provider } from "react-redux"
 import reportWebVitals from './reportWebVitals';
 import 'fontsource-roboto';
 import reducer from "./store/reducer";
-import { IRecipe, RecipeState, RecipeAction, DispatchType } from "./type";
+import { RecipeState, RecipeAction, DispatchType } from "./type";
 import thunk from "redux-thunk";
 
 const store: Store<RecipeState, RecipeAction> & {

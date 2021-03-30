@@ -1,18 +1,16 @@
 import { 
-  RecipeState,
   IRecipe,
   RecipeAction,
   DispatchType,
   } from "../type"
-  import * as actionTypes from "./actionTypes"
+import * as actionTypes from "./actionTypes"
 
 export function addRecipe(payload: IRecipe) {
   const action: RecipeAction = {
     type: actionTypes.ADD_RECIPE,
     payload
   }
-
-  return simulateHttpRequest(action)
+  return action
 }
 
 export function removeRecipe(payload: IRecipe) {
