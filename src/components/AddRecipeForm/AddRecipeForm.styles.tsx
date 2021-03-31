@@ -11,6 +11,11 @@ const styles = (theme: Theme) =>
       borderRadius: '1rem',
       boxShadow: theme.shadows[5],
       outline: 'none'
+    },
+    modal: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     }
   });
 

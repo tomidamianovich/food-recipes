@@ -6,12 +6,14 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
-import styles from '../RecipeCard/RecipeCard.styles'
+import styles from '../RecipeCard/RecipeCard.styles';
+import ShowRecipeModal from '../ShowRecipeModal/ShowRecipeModal';
 import { IRecipe } from "../../type"
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
 import { useDispatch } from 'react-redux';
 import { removeRecipe } from "../../store/actionCreators"
+import React, { useState } from 'react';
 
 type Props = {
 	cardInfo: IRecipe;
@@ -23,6 +25,7 @@ const RecipeCard: React.FC<Props> = ({
 	testid,
 	cardInfo
 }) => {
+	const [isRecipeInfoModalVisible, setRecipeInfoModalVisible] = useState(false);
 	const dispatch = useDispatch()
 
 	const handleDeleteRecipe = () => {
@@ -43,8 +46,11 @@ const RecipeCard: React.FC<Props> = ({
         </Typography>
 			</CardContent>
 			<CardActions className={classes.buttonWrapper}>
-        <Button size="small">Show Recipe</Button>
+        <Button size="small" onClick={() => setRecipeInfoModalVisible(!isRecipeInfoModalVisible)}>
+					Show Recipe
+				</Button>
       </CardActions>
+			<ShowRecipeModal recipeInfo={cardInfo} isModalVisible={isRecipeInfoModalVisible}/>
 		</Card>
 	);
 }
